@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity"
+    android:padding="15dp">
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="150dp"
+        android:background="@mipmap/ic_launcher"
+        />
+
+    <EditText
+        android:id="@+id/edt_name"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="用户名"
+        android:textSize="16sp"
+        android:layout_marginTop="300dp"
+        android:background="@drawable/bg_username"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"/>
+
+    <EditText
+        android:id="@+id/edt_password"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="密码"
+        android:textSize="16sp"
+        android:layout_below="@+id/edt_name"
+        android:layout_marginTop="15dp"
+        android:inputType="textPassword"
+        android:background="@drawable/bg_username"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"/>
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:text="登录"
+        android:layout_below="@id/edt_password"
+        android:gravity="center"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="66dp"
+        android:textSize="30sp"
+        android:background="@drawable/bg_tv_skip"/>
+
+    <Button
+        android:id="@+id/btn_register"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:text="注册"
+        android:gravity="center"
+        android:layout_below="@id/edt_password"
+        android:layout_toRightOf="@id/btn_login"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="60dp"
+        android:textSize="30sp"
+        android:background="@drawable/bg_tv_skip"
+        />
+
+</RelativeLayout>

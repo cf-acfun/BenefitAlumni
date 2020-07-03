@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterActivity"
+    android:padding="15dp">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/edt_registerName"
+        android:hint="请输入账号"
+        android:textSize="26sp"
+        android:background="@drawable/bg_username"
+        android:paddingLeft="10dp"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/edt_registerPassword"
+        android:hint="请输入密码"
+        android:textSize="26sp"
+        android:inputType="textPassword"
+        android:layout_below="@id/edt_registerName"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_username"
+        android:paddingLeft="10dp"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/edt_registerEmail"
+        android:hint="请输入注册验证邮箱"
+        android:textSize="26sp"
+        android:inputType="textEmailAddress"
+        android:layout_below="@id/edt_registerPassword"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_username"
+        android:paddingLeft="10dp"
+        />
+
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="注册"
+        android:textSize="26sp"
+        android:layout_below="@id/edt_registerEmail"
+        android:background="@drawable/bg_tv_skip"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="50dp"
+        android:id="@+id/btn_register"/>
+
+
+
+
+
+</RelativeLayout>
