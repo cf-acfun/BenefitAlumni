@@ -3,14 +3,11 @@ package com.example.benefitalumni1;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import com.example.benefitalumni1.model.User;
-
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
