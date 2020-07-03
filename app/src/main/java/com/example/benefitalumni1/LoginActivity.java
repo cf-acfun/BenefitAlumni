@@ -61,6 +61,7 @@ public class LoginActivity extends Activity {
 
     }*/
 
+    // 用户登录
     @OnClick(R.id.btn_login)
     public void login(){
         String name = edt_name.getText().toString();
