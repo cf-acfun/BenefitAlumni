@@ -1,5 +1,6 @@
 package com.example.benefitalumni1;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -59,6 +60,7 @@ public class MainActivity extends Activity {
     }
 
     //创建一个 Handler 更新UI，接到消息后更新UI
+    @SuppressLint("HandlerLeak")
     public Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
