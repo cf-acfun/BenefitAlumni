@@ -5,12 +5,14 @@ import cn.bmob.v3.BmobObject;
 
 //失物
 public class LostItem extends BmobObject {
+
     private int lostItemId;//失物id
     private String lostItemName;//失物名称
     private String type;//失物类型
     private String lostTime;//丢失时间
     private String detail;//失物详情描述
-    private int userId;//用户Id
+    //private String userName;//用户名称
+    private User userName;
     private String pic;//图片
     private String contact;//联系方式
 
@@ -18,24 +20,13 @@ public class LostItem extends BmobObject {
     public LostItem() {
     }
 
-    public LostItem(String lostItemName, String type, String lostTime, String detail, int userId, String pic,
-                    String contact) {
-        this.userId = userId;
-        this.lostItemName = lostItemName;
-        this.type = type;
-        this.lostTime = lostTime;
-        this.detail = detail;
-        this.pic = pic;
-        this.contact = contact;
-    }
-
-    public LostItem(int lostItemId, int userId, String lostItemName, String type, String lostTime, String detail, String pic, String contact) {
+    public LostItem(int lostItemId, String lostItemName, String type, String lostTime, String detail, User userName, String pic, String contact) {
         this.lostItemId = lostItemId;
-        this.userId = userId;
         this.lostItemName = lostItemName;
         this.type = type;
         this.lostTime = lostTime;
         this.detail = detail;
+        this.userName = userName;
         this.pic = pic;
         this.contact = contact;
     }
@@ -46,14 +37,6 @@ public class LostItem extends BmobObject {
 
     public void setLostItemId(int lostItemId) {
         this.lostItemId = lostItemId;
-    }
-
-    public int getUserId() {
-        return userId;
-    }
-
-    public void setUserId(int userId) {
-        this.userId = userId;
     }
 
     public String getLostItemName() {
@@ -86,6 +69,14 @@ public class LostItem extends BmobObject {
 
     public void setDetail(String detail) {
         this.detail = detail;
+    }
+
+    public User getUserName() {
+        return userName;
+    }
+
+    public void setUserName(User userName) {
+        this.userName = userName;
     }
 
     public String getPic() {

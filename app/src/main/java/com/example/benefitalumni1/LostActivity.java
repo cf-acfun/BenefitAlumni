@@ -12,7 +12,8 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import com.example.benefitalumni1.entity.LostItem;
-import com.example.benefitalumni1.entity.User;
+
+import com.example.benefitalumni1.model.User;
 import com.example.benefitalumni1.util.Global;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -52,7 +53,8 @@ public class LostActivity extends Activity {
 
     //跳转到新增失物信息页面
     public void goAddLostItem(View view) {
-        Intent intent = new Intent(this, AddLostActivity.class);
+//        Intent intent = new Intent(this, AddLostActivity.class);
+        Intent intent = new Intent(this, AddNewLostActivity.class);
         intent.putExtra("user", user);
         startActivity(intent);
         finish();

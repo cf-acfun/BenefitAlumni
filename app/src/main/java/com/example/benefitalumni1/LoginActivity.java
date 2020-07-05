@@ -77,9 +77,10 @@ public class LoginActivity extends Activity {
                 if (e == null){
                     Toast.makeText(LoginActivity.this,"登录成功！",Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(LoginActivity.this,HomeActivity.class);
-                    intent.putExtra("user", user);    // 发送用户名
-                    //startActivity(intent);
-                    startActivityForResult(intent,999);
+                    //intent.putExtra("user", user);    // 发送用户名
+                    intent.putExtra("user",user);
+                    startActivity(intent);
+                    //startActivityForResult(intent,999);
                     finish();
                 } else {
                     Toast.makeText(LoginActivity.this,"用户名或密码错误！",Toast.LENGTH_LONG).show();

@@ -166,7 +166,7 @@
         android:background="@drawable/uploadpic"
         android:nestedScrollingEnabled="true"
         android:onClick="uploadLost"
-        android:scaleType="centerCrop"></com.loopj.android.image.SmartImageView>
+        android:scaleType="centerCrop" />
 
     <LinearLayout
         android:id="@+id/ll_lostContact"

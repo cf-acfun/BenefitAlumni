@@ -4,12 +4,11 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import com.example.benefitalumni1.entity.User;
+import com.example.benefitalumni1.model.User;
 
 
 //主界面
@@ -25,13 +24,15 @@ public class HomeActivity extends Activity {
 
 //        得到intent传递的数据
         Intent intent = getIntent();
+        //user = (User) intent.getSerializableExtra("user");
         user = (User) intent.getSerializableExtra("user");
+        Log.d("user", "-----------onCreate: 用户名为:"+user);
 
     }
 
     //进入失物模块
     public void lost(View view) {
-        Intent intent = new Intent(HomeActivity.this, LostActivity.class);
+        Intent intent = new Intent(HomeActivity.this, NewLostActivity.class);
         intent.putExtra("user", user);
         startActivity(intent);
 
