@@ -1,7 +1,9 @@
 package com.example.benefitalumni1;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -18,7 +20,7 @@ import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.SaveListener;
 
 
-public class RegisterActivity extends AppCompatActivity {
+public class RegisterActivity extends Activity {
 
     @Bind(R.id.edt_registerName)
     EditText edtRegisterName;
@@ -34,6 +36,7 @@ public class RegisterActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);      // 去掉标题栏
         setContentView(R.layout.activity_register);
         ButterKnife.bind(this);
 

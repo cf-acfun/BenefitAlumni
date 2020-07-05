@@ -11,6 +11,7 @@ import com.example.benefitalumni1.model.User;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import cn.bmob.v3.Bmob;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.SaveListener;
 
@@ -33,6 +34,9 @@ public class LoginActivity extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
+
+        Bmob.initialize(this,"04e905bba1912c9e7d3972bdebe82ff6");
+
     }
 /*
     @OnClick(R.id.btn_login)
@@ -72,6 +76,11 @@ public class LoginActivity extends Activity {
             public void done(User user, BmobException e) {
                 if (e == null){
                     Toast.makeText(LoginActivity.this,"登录成功！",Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(LoginActivity.this,HomeActivity.class);
+                    intent.putExtra("user", user);    // 发送用户名
+                    //startActivity(intent);
+                    startActivityForResult(intent,999);
+                    finish();
                 } else {
                     Toast.makeText(LoginActivity.this,"用户名或密码错误！",Toast.LENGTH_LONG).show();
                 }

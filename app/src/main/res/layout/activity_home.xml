@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeActivity">
+
+    <RelativeLayout
+        android:id="@+id/rl_title"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#2B98f0">
+
+        <TextView
+            android:id="@+id/tv_exitLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:drawableLeft="@drawable/back"
+            android:gravity="center_vertical"
+            android:onClick="exitLogin"
+            android:text="退出登录"
+            android:textColor="#FFFFFF"
+            android:textSize="22sp" />
+
+        <TextView
+            style="Base.Theme.Sample"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:gravity="center_vertical"
+            android:onClick="info"
+            android:text="我的信息"
+            android:textColor="#FFFFFF"
+            android:textSize="22sp" />
+
+    </RelativeLayout>
+
+
+    <ImageView
+        android:id="@+id/iv_lost"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/rl_title"
+        android:layout_marginTop="30dp"
+        android:onClick="lost"
+        android:src="@drawable/lost" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/rl_title"
+        android:src="@drawable/losttext" />
+
+    <!--两根分割线-->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10px"
+        android:layout_above="@+id/iv_found"
+        android:background="#515151" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10px"
+        android:layout_below="@+id/iv_lost"
+        android:background="#515151" />
+
+
+    <ImageView
+        android:id="@+id/iv_found"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="8dp"
+        android:onClick="found"
+        android:src="@drawable/found" />
+
+
+    <ImageView
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_alignEnd="@+id/iv_found"
+        android:layout_alignTop="@+id/iv_found"
+        android:src="@drawable/foundtext" />
+
+</RelativeLayout>
