@@ -61,7 +61,7 @@
         android:id="@+id/edt_registerClass"
         android:hint="请输入年级班级：例17-软测"
         android:textSize="26sp"
-        android:layout_below="@id/edt_registerRealName"
+        android:layout_below="@id/edt_registerCollege"
         android:layout_marginTop="20dp"
         android:background="@drawable/bg_username"
         android:paddingLeft="10dp"
@@ -86,6 +86,18 @@
         android:hint="请输入手机号"
         android:textSize="26sp"
         android:layout_below="@id/edt_registerQQ"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_username"
+        android:paddingLeft="10dp"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/edt_registerCollege"
+        android:hint="请输入所在学院"
+        android:textSize="26sp"
+        android:layout_below="@id/edt_registerRealName"
         android:layout_marginTop="20dp"
         android:background="@drawable/bg_username"
         android:paddingLeft="10dp"

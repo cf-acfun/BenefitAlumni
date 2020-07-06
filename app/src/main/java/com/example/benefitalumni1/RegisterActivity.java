@@ -35,6 +35,8 @@ public class RegisterActivity extends Activity {
     EditText edtRegisterQQ;
     @Bind(R.id.edt_registerTel)
     EditText edtRegisterTel;
+    @Bind(R.id.edt_registerCollege)
+    EditText edtRegisterCollege;
 
 
     @Override
@@ -66,6 +68,7 @@ public class RegisterActivity extends Activity {
         final String userClass = edtRegisterClass.getText().toString();
         final String QQ = edtRegisterQQ.getText().toString();
         final String Tel = edtRegisterTel.getText().toString();
+        final String college = edtRegisterCollege.getText().toString();
 
         //Person p2 = new Person();
         User user = new User();
@@ -76,6 +79,7 @@ public class RegisterActivity extends Activity {
         user.setUserClass(userClass);
         user.setQQ(QQ);
         user.setTel(Tel);
+        user.setCollege(college);
 
         // 注册
         user.signUp(new SaveListener<User>() {

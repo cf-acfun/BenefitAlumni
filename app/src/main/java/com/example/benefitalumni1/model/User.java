@@ -8,15 +8,17 @@ public class User extends BmobUser {
     private String userClass;
     private String QQ;
     private String Tel;
+    private String college;
 
     public User() {
     }
 
-    public User(String realName, String userClass, String QQ, String tel) {
+    public User(String realName, String userClass, String QQ, String tel, String college) {
         this.realName = realName;
         this.userClass = userClass;
         this.QQ = QQ;
         Tel = tel;
+        this.college = college;
     }
 
     public String getRealName() {
@@ -49,5 +51,13 @@ public class User extends BmobUser {
 
     public void setTel(String tel) {
         Tel = tel;
+    }
+
+    public String getCollege() {
+        return college;
+    }
+
+    public void setCollege(String college) {
+        this.college = college;
     }
 }
