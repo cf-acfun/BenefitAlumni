@@ -41,9 +41,9 @@ public class UpdateUserInfoActivity extends Activity {
         user = (User) intent.getSerializableExtra("user");
 
         //回显用户数据
-        et_name = (EditText) findViewById(R.id.et_name);
-        et_pwd = (EditText) findViewById(R.id.et_pwd);
-        et_rePwd = (EditText) findViewById(R.id.et_rePwd);
+//        et_name = (EditText) findViewById(R.id.et_name);
+//        et_pwd = (EditText) findViewById(R.id.et_pwd);
+//        et_rePwd = (EditText) findViewById(R.id.et_rePwd);
 
         //回显用户数据
         et_name.setText(user.getName().toString());

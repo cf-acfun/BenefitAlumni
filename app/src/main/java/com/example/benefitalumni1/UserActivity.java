@@ -87,7 +87,7 @@ public class UserActivity extends Activity {
                 finish();
                 break;
             case R.id.update:
-                Intent intent = new Intent(this, UpdateUserInfoActivity.class);
+                Intent intent = new Intent(this, UpdateUserActivity.class);
                 intent.putExtra("user", user);
                 startActivity(intent);
                 finish();
