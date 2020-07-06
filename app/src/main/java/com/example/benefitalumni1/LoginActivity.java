@@ -89,7 +89,6 @@ public class LoginActivity extends Activity {
         });
     }
 
-
     @OnClick(R.id.btn_register)
     public void Register() {
         Intent intent = new Intent(LoginActivity.this,RegisterActivity.class);

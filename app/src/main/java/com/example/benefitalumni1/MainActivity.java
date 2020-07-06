@@ -70,12 +70,6 @@ public class MainActivity extends Activity {
         }
     };
 
-    //@butterknife.OnClick(R.id.btn_skip)
-    // public void onClick() {
-    // 加入具体的操作
-    // ……
-    // }
-
     @OnClick(R.id.btn_skip)
     public void onClick(){
 

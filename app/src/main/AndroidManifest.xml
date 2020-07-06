@@ -16,7 +16,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UpdateUserActivity"></activity>
+        <activity android:name=".NewFoundDetailActivity"></activity>
+        <activity android:name=".AddNewFoundActivity" />
+        <activity android:name=".NewFoundActivity" />
+        <activity android:name=".UpdateUserActivity" />
         <activity android:name=".UserActivity" />
         <activity android:name=".NewLostDetailActivity" />
         <activity android:name=".AddNewLostActivity" />
@@ -37,11 +40,8 @@
         </activity>
         <activity android:name=".HomeActivity" />
         <activity android:name=".AddFoundActivity" />
-        <activity android:name=".LostActivity" />
-        <activity android:name=".AddLostActivity" />
         <activity android:name=".FoundActivity" />
         <activity android:name=".FoundDetailActivity" />
-        <activity android:name=".UpdateUserInfoActivity" />
     </application>
 
 </manifest>

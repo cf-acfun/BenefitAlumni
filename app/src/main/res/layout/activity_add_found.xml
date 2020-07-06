@@ -18,7 +18,7 @@
             android:layout_centerVertical="true"
             android:drawableLeft="@drawable/back"
             android:gravity="center_vertical"
-            android:onClick="back"
+            android:id="@+id/back"
             android:text="返回"
             android:textColor="#FFFFFF"
             android:textSize="22sp" />
@@ -208,7 +208,7 @@
         android:layout_marginRight="7dp"
         android:layout_marginTop="10dp"
         android:background="#2B98f0"
-        android:onClick="addFound"
+        android:id="@+id/addFound"
         android:text="确认发布"
         android:textColor="#FFFFFF"
         android:textSize="20sp" />

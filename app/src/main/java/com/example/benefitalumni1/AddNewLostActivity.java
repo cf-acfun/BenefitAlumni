@@ -1,15 +1,10 @@
 package com.example.benefitalumni1;
 
-import android.Manifest;
+
 import android.app.Activity;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.database.Cursor;
-import android.graphics.BitmapFactory;
-import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
-import android.provider.MediaStore;
+
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
@@ -18,21 +13,16 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.benefitalumni1.model.LostItem;
 import com.example.benefitalumni1.model.User;
 import com.loopj.android.image.SmartImageView;
 
-import java.io.File;
-
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import cn.bmob.v3.Bmob;
-import cn.bmob.v3.datatype.BmobFile;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.SaveListener;
-import cn.bmob.v3.listener.UploadFileListener;
+
 
 public class AddNewLostActivity extends Activity {
 
@@ -117,6 +107,7 @@ public class AddNewLostActivity extends Activity {
                 }
             }
         });
+
         // 上传图片
 //        BmobFile bmobFile = new BmobFile(new File(lostImg));
 //        bmobFile.upload(new UploadFileListener() {

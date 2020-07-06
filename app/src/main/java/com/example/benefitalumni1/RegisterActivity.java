@@ -70,7 +70,6 @@ public class RegisterActivity extends Activity {
         final String Tel = edtRegisterTel.getText().toString();
         final String college = edtRegisterCollege.getText().toString();
 
-        //Person p2 = new Person();
         User user = new User();
         user.setUsername(name);
         user.setPassword(password);

@@ -1,5 +1,6 @@
 package com.example.benefitalumni1;
 
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -14,7 +15,7 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.example.benefitalumni1.model.LostItem;
+import com.example.benefitalumni1.model.FoundItem;
 import com.example.benefitalumni1.model.User;
 import com.loopj.android.image.SmartImageView;
 
@@ -23,24 +24,23 @@ import java.util.List;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import cn.bmob.v3.Bmob;
 import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.FindListener;
 
-//失物模块界面
-public class NewLostActivity extends Activity {
+public class NewFoundActivity extends Activity {
 
+    @Bind(R.id.back)
+    TextView back;
     @Bind(R.id.textView)
     TextView textView;
     @Bind(R.id.rl_title)
     RelativeLayout rlTitle;
     @Bind(R.id.lv)
-    ListView listView;
-    @Bind(R.id.iv_addLost)
-    ImageView ivAddLost;
-    //private ListView listView;
-    private List<LostItem> list_lostItem;
+    ListView lv;
+    @Bind(R.id.iv_addFound)
+    ImageView ivAddFound;
+    private List<FoundItem> list_foundItem;
     private User user;
     ListAdapter listAdapter;
 
@@ -48,51 +48,40 @@ public class NewLostActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);      // 去掉标题栏
-        setContentView(R.layout.activity_lost);
+        setContentView(R.layout.activity_found);
         ButterKnife.bind(this);
-
-        Bmob.initialize(this, "04e905bba1912c9e7d3972bdebe82ff6");
 
         //获取当前登陆对象
         Intent intent = getIntent();
         user = (User) intent.getSerializableExtra("user");
 
-        //listView = (ListView) findViewById(R.id.lv);
-        getAllLostItem();//查询所有的失物
+        getAllFoundItem();//查询所有的拾物
 
 
     }
 
-    //跳转到新增失物信息页面
-    public void goAddLostItem(View view) {
-//        Intent intent = new Intent(this, AddLostActivity.class);
-        Intent intent = new Intent(this, AddNewLostActivity.class);
-        intent.putExtra("user", user);
-        startActivity(intent);
-        finish();
-    }
-
-    private void getAllLostItem() {
-        BmobQuery<LostItem> query = new BmobQuery<>();
-        query.findObjects(new FindListener<LostItem>() {
+    private void getAllFoundItem() {
+        BmobQuery<FoundItem> query = new BmobQuery<>();
+        query.findObjects(new FindListener<FoundItem>() {
             @Override
-            public void done(List<LostItem> list, BmobException e) {
+            public void done(List<FoundItem> list, BmobException e) {
                 if (e == null) {
-                    list_lostItem = list;
-                    listAdapter = new ListAdapter(NewLostActivity.this,list_lostItem);
-                    listView.setAdapter(listAdapter);
+                    list_foundItem = list;
+                    listAdapter = new ListAdapter(NewFoundActivity.this, list_foundItem);
+                    lv.setAdapter(listAdapter);
                 }
             }
         });
 
     }
 
+
     class ListAdapter extends BaseAdapter {
 
         private Context context;
-        private List<LostItem> list;
+        private List<FoundItem> list;
 
-        public ListAdapter(Context context, List<LostItem> list) {
+        public ListAdapter(Context context, List<FoundItem> list) {
             this.context = context;
             this.list = list;
         }
@@ -114,13 +103,9 @@ public class NewLostActivity extends Activity {
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-//            if (convertView == null) {
-//                convertView = LayoutInflater.from(context).inflate(R.layout.lv_item, null);
-//            }
-
             ViewHolder holder = null;
-            if (convertView == null){
-                convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.lv_item,null);
+            if (convertView == null) {
+                convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.lv_item, null);
                 holder = new ViewHolder();
                 holder.sivIcon = (SmartImageView) convertView.findViewById(R.id.siv_icon);
                 holder.tvType = (TextView) convertView.findViewById(R.id.tv_type);
@@ -130,16 +115,16 @@ public class NewLostActivity extends Activity {
             } else {
                 holder = (ViewHolder) parent.getTag();
             }
-            final LostItem lostItem = list.get(position);
-            holder.tvType.setText(lostItem.getType());
+            final FoundItem foundItem = list.get(position);
+            holder.tvType.setText(foundItem.getType());
             // 获取图片
             //holder.sivIcon.setImageUrl(lostItem.getPic().toString());
-            holder.tvDescription.setText(lostItem.getDetail());
+            holder.tvDescription.setText(foundItem.getDetail());
             holder.item.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(NewLostActivity.this, NewLostDetailActivity.class);
-                    intent.putExtra("lostItem", lostItem);
+                    Intent intent = new Intent(NewFoundActivity.this, NewFoundDetailActivity.class);
+                    intent.putExtra("foundItem", foundItem);
                     intent.putExtra("user", user);
                     startActivity(intent);
                     finish();
@@ -147,45 +132,46 @@ public class NewLostActivity extends Activity {
             });
 
             return convertView;
-
-        }
-
-        class ViewHolder {
-            // 图像
-            @Bind(R.id.siv_icon)
-            SmartImageView sivIcon;
-            // 类型
-            @Bind(R.id.tv_type)
-            TextView tvType;
-            // 描述
-            @Bind(R.id.tv_description)
-            TextView tvDescription;
-            @Bind(R.id.item)
-            RelativeLayout item;
-
-            ViewHolder(View view) {
-                ButterKnife.bind(this, view);
-            }
-
-            public ViewHolder() {
-
-            }
         }
     }
 
+    class ViewHolder {
+        // 图像
+        @Bind(R.id.siv_icon)
+        SmartImageView sivIcon;
+        // 类型
+        @Bind(R.id.tv_type)
+        TextView tvType;
+        // 描述
+        @Bind(R.id.tv_description)
+        TextView tvDescription;
+        @Bind(R.id.item)
+        RelativeLayout item;
 
-    @OnClick({R.id.textView, R.id.iv_addLost})
+        ViewHolder(View view) {
+            ButterKnife.bind(this, view);
+        }
+
+        public ViewHolder() {
+
+        }
+
+    }
+
+    @OnClick({R.id.back, R.id.iv_addFound})
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.textView:
+            case R.id.back:
                 finish();
                 break;
-            case R.id.iv_addLost:
-                Intent intent = new Intent(this, AddNewLostActivity.class);
+            case R.id.iv_addFound:
+                Intent intent = new Intent(NewFoundActivity.this, AddNewFoundActivity.class);
                 intent.putExtra("user", user);
                 startActivity(intent);
                 finish();
                 break;
         }
     }
+
+
 }

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FoundDetailActivity">
+    tools:context=".NewFoundDetailActivity">
     <RelativeLayout
         android:id="@+id/rl_title"
         android:layout_width="match_parent"
@@ -16,7 +16,7 @@
             android:layout_centerVertical="true"
             android:drawableLeft="@drawable/back"
             android:gravity="center_vertical"
-            android:onClick="back"
+            android:id="@+id/back"
             android:text="返回"
             android:textColor="#FFFFFF"
             android:textSize="22sp" />
@@ -208,7 +208,6 @@
         android:layout_below="@+id/ll_foundContact"
         android:layout_marginTop="10dp"
         android:background="#2B98f0"
-        android:onClick="deleteFound"
         android:text="删除"
         android:textColor="#FFFFFF"
         android:textSize="20sp"

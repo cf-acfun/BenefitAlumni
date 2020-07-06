@@ -11,7 +11,6 @@ public class LostItem extends BmobObject {
     private String type;//失物类型
     private String lostTime;//丢失时间
     private String detail;//失物详情描述
-    //private String userName;//用户名称
     private String userName;
     private String pic;//图片
     private String contact;//联系方式

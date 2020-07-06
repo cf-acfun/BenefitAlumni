@@ -1,47 +1,38 @@
-package com.example.benefitalumni1.entity;
+package com.example.benefitalumni1.model;
 
-import java.io.Serializable;
+import cn.bmob.v3.BmobObject;
 
 //拾物
-public class FoundItem implements Serializable {
-    private int foundItemId;//拾物id
+public class FoundItem extends BmobObject {
+
+    private String foundItemId;//拾物id
     private String foundItemName;//拾物名称
     private String type;//拾物类型
     private String foundTime;//捡到时间
     private String detail;//拾物详情描述
-    private int userId;//用户Id
+    private String userName;//用户Id
     private String pic;//图片
     private String contact;//联系方式
 
     public FoundItem() {
     }
 
-    public FoundItem(String foundItemName, String type, String foundTime, String detail, int userId, String pic, String contact) {
-        this.foundItemName = foundItemName;
-        this.type = type;
-        this.foundTime = foundTime;
-        this.detail = detail;
-        this.userId = userId;
-        this.pic = pic;
-        this.contact = contact;
-    }
-
-    public FoundItem(int foundItemId, String foundItemName, String type, String foundTime, String detail, int userId, String pic, String contact) {
+    public FoundItem(String foundItemId, String foundItemName, String type, String foundTime, String detail, String userName, String pic, String contact) {
         this.foundItemId = foundItemId;
         this.foundItemName = foundItemName;
         this.type = type;
         this.foundTime = foundTime;
         this.detail = detail;
-        this.userId = userId;
+        this.userName = userName;
         this.pic = pic;
         this.contact = contact;
     }
 
-    public int getFoundItemId() {
+    public String getFoundItemId() {
         return foundItemId;
     }
 
-    public void setFoundItemId(int foundItemId) {
+    public void setFoundItemId(String foundItemId) {
         this.foundItemId = foundItemId;
     }
 
@@ -77,12 +68,12 @@ public class FoundItem implements Serializable {
         this.detail = detail;
     }
 
-    public int getUserId() {
-        return userId;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getPic() {

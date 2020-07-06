@@ -68,7 +68,6 @@ public class NewLostDetailActivity extends Activity {
         user = (User) intent.getSerializableExtra("user");
         lostItem = (LostItem) intent.getSerializableExtra("lostItem");
 
-
         Log.d("id_message", "onCreate: 丢失物品ID为：" + lostItem.getLostItemId());
         Log.d("id_message", "onCreate: 用户ID为：" + user.getObjectId());
 

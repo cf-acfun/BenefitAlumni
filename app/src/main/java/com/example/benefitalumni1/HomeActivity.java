@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
-
 import com.example.benefitalumni1.model.User;
 
 
@@ -42,7 +41,7 @@ public class HomeActivity extends Activity {
 
     //进入拾物模块
     public void found(View view) {
-        Intent intent = new Intent(HomeActivity.this, FoundActivity.class);
+        Intent intent = new Intent(HomeActivity.this, NewFoundActivity.class);
         intent.putExtra("user", user);
         startActivity(intent);
     }
@@ -57,8 +56,10 @@ public class HomeActivity extends Activity {
 
     //退出登陆
     public void exitLogin(View view) {
-        Intent intent = new Intent();
-        setResult(999, intent);
+//        Intent intent = new Intent();
+//        setResult(999, intent);
+        Intent intent = new Intent(HomeActivity.this,LoginActivity.class);
+        startActivity(intent);
         finish();
     }
 

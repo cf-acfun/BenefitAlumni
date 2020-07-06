@@ -60,4 +60,5 @@ public class User extends BmobUser {
     public void setCollege(String college) {
         this.college = college;
     }
+
 }

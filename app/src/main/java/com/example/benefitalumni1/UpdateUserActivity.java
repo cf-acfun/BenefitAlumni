@@ -71,6 +71,9 @@ public class UpdateUserActivity extends Activity {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.back:
+                Intent intent = new Intent(UpdateUserActivity.this, UserActivity.class);
+                intent.putExtra("user", user);
+                startActivity(intent);
                 finish();
                 break;
             case R.id.sureUpdate:
@@ -103,7 +106,7 @@ public class UpdateUserActivity extends Activity {
             public void done(BmobException e) {
                 if(e==null){
 //                    toast("更新成功:"+p2.getUpdatedAt());
-                    Toast.makeText(UpdateUserActivity.this,"用户信息更新成功，请重新验证邮箱"+updateUser.getUpdatedAt(),Toast.LENGTH_SHORT).show();
+                    Toast.makeText(UpdateUserActivity.this,"用户信息更新成功，如更改邮箱请重新验证"+updateUser.getUpdatedAt(),Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(UpdateUserActivity.this, UserActivity.class);
                     intent.putExtra("user", user);
                     startActivity(intent);

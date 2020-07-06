@@ -60,7 +60,9 @@ public class UserActivity extends Activity {
 
         // 从数据库中获取当前用户的信息
         String userId = user.getUsername();
+
         String password = "********";    // 密码无法获取，使用**代替
+
         String realName = user.getRealName();
         String email = user.getEmail();
         String college = user.getCollege();

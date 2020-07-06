@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LostActivity">
+    tools:context=".NewLostActivity">
 
     <RelativeLayout
         android:id="@+id/rl_title"
@@ -20,7 +20,8 @@
             android:onClick="back"
             android:text="返回"
             android:textColor="#FFFFFF"
-            android:textSize="22sp" />
+            android:textSize="22sp"
+            tools:ignore="OnClick" />
 
         <TextView
             style="Base.Theme.Sample"
