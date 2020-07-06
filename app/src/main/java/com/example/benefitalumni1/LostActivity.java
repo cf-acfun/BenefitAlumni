@@ -142,7 +142,7 @@ public class LostActivity extends Activity {
             holder.item.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(LostActivity.this, LostDetailActivity.class);
+                    Intent intent = new Intent(LostActivity.this, NewLostDetailActivity.class);
                     intent.putExtra("lostItem", lostItem);
                     intent.putExtra("user", user);
                     startActivity(intent);

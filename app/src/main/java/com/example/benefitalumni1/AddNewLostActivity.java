@@ -88,6 +88,8 @@ public class AddNewLostActivity extends Activity {
         String lostType = etLostType.getText().toString();
         String lostTime = etLostTime.getText().toString();
         String lostDetail = etLostDetail.getText().toString();
+        String lostId = user.getObjectId();    // 将丢失物品的id与user绑定。
+        Log.d("message", "+++++-----------addLost: 用户id为：" + lostId);
         //String lostImg = imgPath;
         //String lostImg = "";
         String lostContact = etLostContact.getText().toString();
@@ -97,7 +99,8 @@ public class AddNewLostActivity extends Activity {
         lostitem.setLostTime(lostTime);
         lostitem.setDetail(lostDetail);
         lostitem.setContact(lostContact);
-        lostitem.setUserName(user);
+        lostitem.setUserName(user.getUsername());
+        lostitem.setLostItemId(lostId);
 
         lostitem.save(new SaveListener<String>() {
             @Override
@@ -105,6 +108,8 @@ public class AddNewLostActivity extends Activity {
                 if(e==null){
                     //toast("添加数据成功，返回objectId为："+objectId);
                     Toast.makeText(AddNewLostActivity.this,"添加数据成功",Toast.LENGTH_SHORT).show();
+                    // 添加数据成功之后直接返回上一个界面
+                    finish();
                 }else{
                     //toast("创建数据失败：" + e.getMessage());
                     Toast.makeText(AddNewLostActivity.this,"添加数据失败",Toast.LENGTH_SHORT).show();

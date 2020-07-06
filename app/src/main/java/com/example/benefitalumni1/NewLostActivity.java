@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,7 +16,6 @@ import android.widget.TextView;
 
 import com.example.benefitalumni1.model.LostItem;
 import com.example.benefitalumni1.model.User;
-import com.example.benefitalumni1.util.Global;
 import com.loopj.android.image.SmartImageView;
 
 import java.util.List;
@@ -44,6 +42,7 @@ public class NewLostActivity extends Activity {
     //private ListView listView;
     private List<LostItem> list_lostItem;
     private User user;
+    ListAdapter listAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,7 +79,7 @@ public class NewLostActivity extends Activity {
             public void done(List<LostItem> list, BmobException e) {
                 if (e == null) {
                     list_lostItem = list;
-                    ListAdapter listAdapter = new ListAdapter(NewLostActivity.this,list_lostItem);
+                    listAdapter = new ListAdapter(NewLostActivity.this,list_lostItem);
                     listView.setAdapter(listAdapter);
                 }
             }
@@ -115,9 +114,9 @@ public class NewLostActivity extends Activity {
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            if (convertView == null) {
-                convertView = LayoutInflater.from(context).inflate(R.layout.lv_item, null);
-            }
+//            if (convertView == null) {
+//                convertView = LayoutInflater.from(context).inflate(R.layout.lv_item, null);
+//            }
 
             ViewHolder holder = null;
             if (convertView == null){
@@ -135,10 +134,14 @@ public class NewLostActivity extends Activity {
 //            holder.tvType.setText(lostItem.getType().toString());
 //            holder.sivIcon.setImageUrl(Global.PicPath + lostItem.getPic().toString());
 //            holder.tvDescription.setText(lostItem.getDetail());
+            holder.tvType.setText(lostItem.getType());
+            // 获取图片
+            //holder.sivIcon.setImageUrl(lostItem.getPic().toString());
+            holder.tvDescription.setText(lostItem.getDetail());
             holder.item.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(NewLostActivity.this, LostDetailActivity.class);
+                    Intent intent = new Intent(NewLostActivity.this, NewLostDetailActivity.class);
                     intent.putExtra("lostItem", lostItem);
                     intent.putExtra("user", user);
                     startActivity(intent);

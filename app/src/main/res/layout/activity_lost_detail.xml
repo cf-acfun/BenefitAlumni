@@ -212,9 +212,18 @@
         android:background="#2B98f0"
         android:onClick="deleteLost"
         android:text="删除"
-        android:textColor="#FFFFFF"
+        android:textColor="#E91E63"
         android:textSize="20sp"
         android:visibility="gone"
         />
 
+<!--    <Button-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@id/ll_lostContact"-->
+<!--        android:text="删除"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:background="#2B98f0"-->
+<!--        android:id="@+id/delete"-->
+<!--        />-->
 </RelativeLayout>

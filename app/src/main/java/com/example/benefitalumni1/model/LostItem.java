@@ -6,13 +6,13 @@ import cn.bmob.v3.BmobObject;
 //失物
 public class LostItem extends BmobObject {
 
-    private int lostItemId;//失物id
+    private String lostItemId;//失物id
     private String lostItemName;//失物名称
     private String type;//失物类型
     private String lostTime;//丢失时间
     private String detail;//失物详情描述
     //private String userName;//用户名称
-    private User userName;
+    private String userName;
     private String pic;//图片
     private String contact;//联系方式
 
@@ -20,7 +20,7 @@ public class LostItem extends BmobObject {
     public LostItem() {
     }
 
-    public LostItem(int lostItemId, String lostItemName, String type, String lostTime, String detail, User userName, String pic, String contact) {
+    public LostItem(String lostItemId, String lostItemName, String type, String lostTime, String detail, String userName, String pic, String contact) {
         this.lostItemId = lostItemId;
         this.lostItemName = lostItemName;
         this.type = type;
@@ -31,11 +31,11 @@ public class LostItem extends BmobObject {
         this.contact = contact;
     }
 
-    public int getLostItemId() {
+    public String getLostItemId() {
         return lostItemId;
     }
 
-    public void setLostItemId(int lostItemId) {
+    public void setLostItemId(String lostItemId) {
         this.lostItemId = lostItemId;
     }
 
@@ -71,11 +71,11 @@ public class LostItem extends BmobObject {
         this.detail = detail;
     }
 
-    public User getUserName() {
+    public String getUserName() {
         return userName;
     }
 
-    public void setUserName(User userName) {
+    public void setUserName(String userName) {
         this.userName = userName;
     }
 
