@@ -2,13 +2,10 @@ package com.example.benefitalumni1;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.benefitalumni1.model.User;
 
@@ -30,7 +27,14 @@ public class RegisterActivity extends Activity {
     Button btnRegister;
     @Bind(R.id.edt_registerEmail)
     EditText edtEmail;
-
+    @Bind(R.id.edt_registerRealName)
+    EditText edtRegisterRealName;
+    @Bind(R.id.edt_registerClass)
+    EditText edtRegisterClass;
+    @Bind(R.id.edt_registerQQ)
+    EditText edtRegisterQQ;
+    @Bind(R.id.edt_registerTel)
+    EditText edtRegisterTel;
 
 
     @Override
@@ -40,8 +44,7 @@ public class RegisterActivity extends Activity {
         setContentView(R.layout.activity_register);
         ButterKnife.bind(this);
 
-        Bmob.initialize(this,"04e905bba1912c9e7d3972bdebe82ff6");
-
+        Bmob.initialize(this, "04e905bba1912c9e7d3972bdebe82ff6");
 
 
     }
@@ -59,35 +62,29 @@ public class RegisterActivity extends Activity {
         final String name = edtRegisterName.getText().toString();
         final String password = edtRegisterPassword.getText().toString();
         final String Email = edtEmail.getText().toString();
+        final String realName = edtRegisterRealName.getText().toString();
+        final String userClass = edtRegisterClass.getText().toString();
+        final String QQ = edtRegisterQQ.getText().toString();
+        final String Tel = edtRegisterTel.getText().toString();
 
         //Person p2 = new Person();
         User user = new User();
         user.setUsername(name);
         user.setPassword(password);
         user.setEmail(Email);
-
-        /*user.save(new SaveListener<String>() {
-            @Override
-            public void done(String objectId, BmobException e) {
-                if(e==null){
-                    //toast("添加数据成功，返回objectId为："+objectId);
-                    Toast.makeText(RegisterActivity.this,"添加数据成功，返回objectId为：" + objectId,Toast.LENGTH_LONG).show();
-                    Log.d("message", "done: 添加数据成功，返回objectId为：" + objectId);
-                }else{
-                    //toast("创建数据失败：" + e.getMessage());
-                    Log.d("message", "done: 创建数据失败：" + e.getMessage());
-                }
-            }
-        }); */
+        user.setRealName(realName);
+        user.setUserClass(userClass);
+        user.setQQ(QQ);
+        user.setTel(Tel);
 
         // 注册
         user.signUp(new SaveListener<User>() {
             @Override
             public void done(User user, BmobException e) {
-                if (e == null){
-                    Toast.makeText(RegisterActivity.this,"恭喜注册成功！请进行邮箱验证完成注册",Toast.LENGTH_LONG).show();
+                if (e == null) {
+                    Toast.makeText(RegisterActivity.this, "恭喜注册成功！请进行邮箱验证完成注册", Toast.LENGTH_LONG).show();
                 } else {
-                    Toast.makeText(RegisterActivity.this,"注册失败！" + e.toString(),Toast.LENGTH_LONG).show();
+                    Toast.makeText(RegisterActivity.this, "注册失败！" + e.toString(), Toast.LENGTH_LONG).show();
                 }
             }
         });

@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:id="@+id/edt_registerName"
-        android:hint="请输入账号"
+        android:hint="请输入学号"
         android:textSize="26sp"
         android:background="@drawable/bg_username"
         android:paddingLeft="10dp"
@@ -36,13 +36,60 @@
         android:id="@+id/edt_registerEmail"
         android:hint="请输入注册验证邮箱"
         android:textSize="26sp"
-        android:inputType="textEmailAddress"
         android:layout_below="@id/edt_registerPassword"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_username"
+        android:paddingLeft="10dp"
+        android:inputType="textEmailAddress"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/edt_registerRealName"
+        android:hint="请输入真实姓名"
+        android:textSize="26sp"
+        android:layout_below="@id/edt_registerEmail"
         android:layout_marginTop="20dp"
         android:background="@drawable/bg_username"
         android:paddingLeft="10dp"
         />
 
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/edt_registerClass"
+        android:hint="请输入年级班级：例17-软测"
+        android:textSize="26sp"
+        android:layout_below="@id/edt_registerRealName"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_username"
+        android:paddingLeft="10dp"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/edt_registerQQ"
+        android:hint="请输入QQ号"
+        android:textSize="26sp"
+        android:layout_below="@id/edt_registerClass"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_username"
+        android:paddingLeft="10dp"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/edt_registerTel"
+        android:hint="请输入手机号"
+        android:textSize="26sp"
+        android:layout_below="@id/edt_registerQQ"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_username"
+        android:paddingLeft="10dp"
+        />
 
 
     <Button
@@ -50,7 +97,7 @@
         android:layout_height="wrap_content"
         android:text="注册"
         android:textSize="26sp"
-        android:layout_below="@id/edt_registerEmail"
+        android:layout_below="@id/edt_registerTel"
         android:background="@drawable/bg_tv_skip"
         android:layout_marginTop="60dp"
         android:layout_marginLeft="50dp"
