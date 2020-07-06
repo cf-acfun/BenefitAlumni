@@ -49,7 +49,7 @@ public class HomeActivity extends Activity {
 
     //进入个人信息模块
     public void info(View view) {
-        Intent intent = new Intent(HomeActivity.this, UserInfoActivity.class);
+        Intent intent = new Intent(HomeActivity.this, UserActivity.class);
         intent.putExtra("user", user);
         startActivityForResult(intent, 999);
 //        finish();

@@ -41,7 +41,6 @@
         <activity android:name=".FoundActivity" />
         <activity android:name=".FoundDetailActivity" />
         <activity android:name=".UpdateUserInfoActivity" />
-        <activity android:name=".UserInfoActivity" />
     </application>
 
 </manifest>

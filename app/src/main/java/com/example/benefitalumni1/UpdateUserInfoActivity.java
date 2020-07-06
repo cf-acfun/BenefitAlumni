@@ -76,7 +76,7 @@ public class UpdateUserInfoActivity extends Activity {
                         @Override
                         public void run() {
                             Toast.makeText(UpdateUserInfoActivity.this, "更新用户信息成功！", Toast.LENGTH_LONG).show();
-                            Intent intent = new Intent(UpdateUserInfoActivity.this, UserInfoActivity.class);
+                            Intent intent = new Intent(UpdateUserInfoActivity.this, UserActivity.class);
                             intent.putExtra("user", user);
                             startActivity(intent);
                             finish();
@@ -92,7 +92,7 @@ public class UpdateUserInfoActivity extends Activity {
 
     //返回
     public void back(View view){
-        Intent intent = new Intent(UpdateUserInfoActivity.this, UserInfoActivity.class);
+        Intent intent = new Intent(UpdateUserInfoActivity.this, UserActivity.class);
         intent.putExtra("user", user);
         startActivity(intent);
         finish();
