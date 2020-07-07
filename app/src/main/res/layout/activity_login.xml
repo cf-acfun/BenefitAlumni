@@ -11,26 +11,32 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
         android:layout_marginLeft="150dp"
-        android:background="@mipmap/ic_launcher"
+        android:layout_marginTop="88dp"
+        android:background="@drawable/benefit_alumni_icon"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/icon_benefit_alumni"
         />
 
     <EditText
         android:id="@+id/edt_name"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="60dp"
         android:hint="用户名"
         android:textSize="16sp"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="60dp"
         android:background="@drawable/bg_username"
         android:paddingRight="10dp"
-        android:paddingLeft="10dp"/>
+        android:paddingLeft="10dp"
+        android:drawableLeft="@drawable/icon_name"
+        android:drawablePadding="10dp"
+        android:layout_below="@+id/icon_benefit_alumni"
+        />
 
     <EditText
         android:id="@+id/edt_password"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="60dp"
         android:hint="密码"
         android:textSize="16sp"
         android:layout_below="@+id/edt_name"
@@ -38,7 +44,9 @@
         android:inputType="textPassword"
         android:background="@drawable/bg_username"
         android:paddingRight="10dp"
-        android:paddingLeft="10dp"/>
+        android:paddingLeft="10dp"
+        android:drawableLeft="@drawable/icon_password"
+        android:drawablePadding="10dp"/>
 
     <Button
         android:id="@+id/btn_login"

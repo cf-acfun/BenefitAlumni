@@ -41,7 +41,7 @@ public class MainActivity extends Activity {
                     // 在子线程中发送消息
                     Message msg = new Message();
                     msg.what = 1;
-                    msg.obj = "跳过 " + i;
+                    msg.obj = "倒计时 " + i;
                     // 发送消息
                     handler.sendMessage(msg);
 

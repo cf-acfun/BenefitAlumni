@@ -11,9 +11,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/benefit_alumni_icon"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/benefit_alumni_icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".NewFoundDetailActivity"></activity>
@@ -39,9 +39,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".HomeActivity" />
-        <activity android:name=".AddFoundActivity" />
-        <activity android:name=".FoundActivity" />
-        <activity android:name=".FoundDetailActivity" />
+
     </application>
 
 </manifest>

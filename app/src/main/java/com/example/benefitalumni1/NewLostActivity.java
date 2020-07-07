@@ -178,12 +178,15 @@ public class NewLostActivity extends Activity {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.textView:
+                Intent intent = new Intent(NewLostActivity.this, HomeActivity.class);
+                intent.putExtra("user", user);
+                startActivity(intent);
                 finish();
                 break;
             case R.id.iv_addLost:
-                Intent intent = new Intent(this, AddNewLostActivity.class);
-                intent.putExtra("user", user);
-                startActivity(intent);
+                Intent intent1 = new Intent(this, AddNewLostActivity.class);
+                intent1.putExtra("user", user);
+                startActivity(intent1);
                 finish();
                 break;
         }

@@ -12,7 +12,7 @@
         android:id="@+id/btn_skip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="跳过"
+        android:text="倒计时"
         android:textSize="16sp"
         android:layout_alignParentLeft="true"
         android:background="@drawable/bg_press_skip" />
