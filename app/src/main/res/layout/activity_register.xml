@@ -59,7 +59,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:id="@+id/edt_registerClass"
-        android:hint="请输入年级班级：例17-软测"
+        android:hint="请输入班级例17-软测"
         android:textSize="26sp"
         android:layout_below="@id/edt_registerCollege"
         android:layout_marginTop="20dp"
