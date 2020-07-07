@@ -35,32 +35,10 @@ public class LoginActivity extends Activity {
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
 
-        Bmob.initialize(this,"04e905bba1912c9e7d3972bdebe82ff6");
+        // 在这里输入Bmob项目ID
+        Bmob.initialize(this, "Application ID");
 
     }
-/*
-    @OnClick(R.id.btn_login)
-    public void onClick() {
-        String name = edt_name.getText().toString();
-        String password = edt_password.getText().toString();
-
-        User user = new User();
-        user.setName(name);
-        user.setPassword(password);
-
-        user.login(new SaveListener<User>() {
-            @Override
-            public void done(User user, BmobException e) {
-                if (e == null){
-                    Toast.makeText(LoginActivity.this,"登录成功",Toast.LENGTH_LONG).show();
-                } else {
-                    Toast.makeText(LoginActivity.this,"用户名或密码错误" + e,Toast.LENGTH_LONG).show();
-                }
-
-            }
-        });
-
-    }*/
 
     // 用户登录
     @OnClick(R.id.btn_login)

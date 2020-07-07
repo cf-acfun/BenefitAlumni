@@ -67,7 +67,8 @@ public class AddNewLostActivity extends Activity {
         Intent intent = getIntent();
         user = (User) intent.getSerializableExtra("user");
 
-        Bmob.initialize(this,"04e905bba1912c9e7d3972bdebe82ff6");
+        // 在这里输入Bmob项目ID
+        Bmob.initialize(this, "Application ID");
 
     }
 
@@ -121,9 +122,6 @@ public class AddNewLostActivity extends Activity {
 //                }
 //            }
 //        });
-
-
-
 
     }
 

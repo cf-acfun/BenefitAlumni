@@ -28,11 +28,11 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         butterknife.ButterKnife.bind(this);
 
-        // sleep 10 秒钟进入login界面
+        // sleep 6 秒钟进入login界面
         new Thread(new Runnable() {
             @Override
             public void run() {
-                for (int i = 10; i >= 1; i--) {
+                for (int i = 6; i >= 1; i--) {
                     try {
                         Thread.sleep(1000);
                     } catch (InterruptedException e) {
