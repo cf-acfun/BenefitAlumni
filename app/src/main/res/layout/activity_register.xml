@@ -52,8 +52,7 @@
         android:layout_below="@id/edt_registerEmail"
         android:layout_marginTop="20dp"
         android:background="@drawable/bg_username"
-        android:paddingLeft="10dp"
-        />
+        android:paddingLeft="10dp" />
 
     <EditText
         android:layout_width="match_parent"
