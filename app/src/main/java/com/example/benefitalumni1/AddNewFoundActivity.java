@@ -42,6 +42,7 @@ public class AddNewFoundActivity extends Activity {
     Button addFound;
     private User user;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
