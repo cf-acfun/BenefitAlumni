@@ -51,7 +51,7 @@ public class UserActivity extends Activity {
         setContentView(R.layout.activity_user_info);
         ButterKnife.bind(this);
 
-        // 在这里输入Bmob项目ID
+        // 在第二个参数添加在Bmob上创建项目的ID
         Bmob.initialize(this, "Application ID");
 
         //得到intent传递的数据

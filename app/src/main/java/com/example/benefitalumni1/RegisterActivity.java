@@ -1,6 +1,7 @@
 package com.example.benefitalumni1;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Window;
 import android.widget.Button;
@@ -46,7 +47,7 @@ public class RegisterActivity extends Activity {
         setContentView(R.layout.activity_register);
         ButterKnife.bind(this);
 
-        // 在这里输入Bmob项目ID
+        // 在第二个参数添加在Bmob上创建项目的ID
         Bmob.initialize(this, "Application ID");
 
 
@@ -87,6 +88,10 @@ public class RegisterActivity extends Activity {
             public void done(User user, BmobException e) {
                 if (e == null) {
                     Toast.makeText(RegisterActivity.this, "恭喜注册成功！请进行邮箱验证完成注册", Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                    intent.putExtra("user", user);
+                    startActivity(intent);
+                    finish();
                 } else {
                     Toast.makeText(RegisterActivity.this, "注册失败！" + e.toString(), Toast.LENGTH_LONG).show();
                 }
